@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "hurt":
 		hurt = false
+
 func take_damage(damage: int = 1) -> void:
 	if not is_active:
 		return
@@ -23,13 +24,13 @@ func take_damage(damage: int = 1) -> void:
 	velocity.y = KNOCKBACK_VELOCITY # Apply knockback jump
 	if not hurt:
 		hurt = true
-	life -= damage
-	print("Life: ", life)
-	if life <= 0:
-		is_active = false
-		animated_sprite.play("die")
-	else:
-		animated_sprite.play("hurt")
+		life -= damage
+		print("Life: ", life)
+		if life <= 0:
+			is_active = false
+			animated_sprite.play("die")
+		else:
+			animated_sprite.play("hurt")
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity when not on floor

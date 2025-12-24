@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://c6chxy8d6xacn"]
+[gd_scene load_steps=78 format=3 uid="uid://c6chxy8d6xacn"]
 
 [ext_resource type="Script" uid="uid://caif7rmb8vjfl" path="res://scripts/barrel.gd" id="1_7fvt2"]
 [ext_resource type="Texture2D" uid="uid://bv8rcwpjw03lv" path="res://assets/tile_map/Objects/Barrel (1).png" id="1_ptqd7"]
@@ -19,9 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dw83gmwq4o44f" path="res://assets/explosion/barrel_1/Explosion2/0015.png" id="17_vbpjb"]
 [ext_resource type="Texture2D" uid="uid://iwxr1dmh3aku" path="res://assets/explosion/barrel_1/Explosion2/0016.png" id="18_4g2kw"]
 [ext_resource type="Texture2D" uid="uid://bdydofx1abnc" path="res://assets/explosion/barrel_1/Explosion2/0017.png" id="19_nmc0n"]
-[ext_resource type="Texture2D" uid="uid://d1d0eest44tjb" path="res://assets/explosion/barrel_1/Explosion2/0018.png" id="20_38edy"]
-[ext_resource type="Texture2D" uid="uid://ctqwp13wemfwo" path="res://assets/explosion/barrel_1/Explosion2/0019.png" id="21_nwds7"]
-[ext_resource type="Texture2D" uid="uid://db5r3xaj78gaj" path="res://assets/explosion/barrel_1/Explosion2/0020.png" id="22_i18h6"]
 [ext_resource type="Texture2D" uid="uid://cwgagp5ycty1u" path="res://assets/explosion/barrel_1/Explosion3/0001.png" id="23_grfw8"]
 [ext_resource type="Texture2D" uid="uid://cogda74xi8cj7" path="res://assets/explosion/barrel_1/Explosion3/0002.png" id="24_id1fl"]
 [ext_resource type="Texture2D" uid="uid://80uhndyg4td2" path="res://assets/explosion/barrel_1/Explosion3/0003.png" id="25_42sad"]
@@ -73,10 +70,6 @@
 [ext_resource type="Texture2D" uid="uid://drj1cieufxwtr" path="res://assets/explosion/barrel_1/Explosion4/0019.png" id="71_yi8e2"]
 [ext_resource type="Texture2D" uid="uid://dlleylyojmljp" path="res://assets/explosion/barrel_1/Explosion4/0020.png" id="72_8kurm"]
 [ext_resource type="Texture2D" uid="uid://dcqpirlau2jgc" path="res://assets/explosion/barrel_1/Explosion4/0021.png" id="73_62q3m"]
-[ext_resource type="Texture2D" uid="uid://csqwxnxhpar2j" path="res://assets/explosion/barrel_1/Explosion4/0022.png" id="74_v4wjd"]
-[ext_resource type="Texture2D" uid="uid://dex43lcetkmig" path="res://assets/explosion/barrel_1/Explosion4/0023.png" id="75_8nvmy"]
-[ext_resource type="Texture2D" uid="uid://d0okj0q6ths3i" path="res://assets/explosion/barrel_1/Explosion4/0024.png" id="76_oxo0m"]
-[ext_resource type="Texture2D" uid="uid://cr4jkypow332y" path="res://assets/explosion/barrel_1/Explosion4/0025.png" id="77_u4b5s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptqd7"]
 animations = [{
@@ -131,15 +124,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("19_nmc0n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_38edy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_nwds7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_i18h6")
 }],
 "loop": false,
 "name": &"animation_1",
@@ -303,18 +287,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("73_62q3m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("74_v4wjd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75_8nvmy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("76_oxo0m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("77_u4b5s")
 }],
 "loop": false,
 "name": &"animation_3",
@@ -378,6 +350,9 @@ _data = {
 &"blink": SubResource("Animation_1p2i6")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpkda"]
+radius = 196.652
+
 [node name="barrel" type="Node2D"]
 script = ExtResource("1_7fvt2")
 
@@ -399,7 +374,7 @@ texture_filter = 1
 position = Vector2(-4, 5)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ptqd7")
-animation = &"animation_1"
+animation = &"animation_3"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -416,6 +391,12 @@ shape = SubResource("RectangleShape2D_bbaju")
 libraries = {
 &"": SubResource("AnimationLibrary_ychr6")
 }
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-5, -69)
+shape = SubResource("CircleShape2D_bpkda")
 
 [connection signal="animation_finished" from="barrel_1_animation" to="." method="_on_barrel_1_animation_animation_finished"]
 [connection signal="frame_changed" from="barrel_1_animation" to="." method="_on_barrel_1_animation_frame_changed"]

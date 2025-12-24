@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://omuheu6gv8bh"]
+[gd_scene load_steps=133 format=3 uid="uid://omuheu6gv8bh"]
 
 [ext_resource type="Texture2D" uid="uid://28ayq2p6u5vq" path="res://assets/explosion/barrel_2/GasLeak1Loop/0000.png" id="1_sy1i6"]
 [ext_resource type="Script" uid="uid://dpr4xu8e4uo4x" path="res://scripts/barrel_acid.gd" id="1_yhblf"]
@@ -564,6 +564,9 @@ size = Vector2(174, 236)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3fy8"]
 size = Vector2(186, 244)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhblf"]
+radius = 196.652
+
 [node name="barrel_acid" type="Node2D"]
 script = ExtResource("1_yhblf")
 
@@ -588,10 +591,9 @@ color = Color(1, 1, 1, 0)
 [node name="barrel_2_animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, -72)
-scale = Vector2(8, 8)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_u5eqq")
-frame = 51
-frame_progress = 1.0
+frame = 24
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -609,6 +611,13 @@ shape = SubResource("RectangleShape2D_yhblf")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_n3fy8")
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-5, -69)
+shape = SubResource("CircleShape2D_yhblf")
+
 [connection signal="animation_finished" from="barrel_2_animation" to="." method="_on_barrel_2_animation_animation_finished"]
 [connection signal="frame_changed" from="barrel_2_animation" to="." method="_on_barrel_2_animation_frame_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
