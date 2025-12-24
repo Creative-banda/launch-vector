@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://56dl3ep3q1nr"]
+
+[ext_resource type="Texture2D" uid="uid://qos6gfpwrepp" path="res://assets/acid-0.png" id="1_1rt3l"]
+[ext_resource type="Script" uid="uid://b034xg7on5t5o" path="res://scripts/acid.gd" id="1_ghesg"]
+[ext_resource type="Texture2D" uid="uid://bk5ja6lemrjif" path="res://assets/acid-1.png" id="2_ghesg"]
+[ext_resource type="Texture2D" uid="uid://0lh4alsqfgbo" path="res://assets/acid-2.png" id="3_jmlk6"]
+[ext_resource type="Texture2D" uid="uid://ddboop36dw05f" path="res://assets/acid-3.png" id="4_dsspl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpjuo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1rt3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ghesg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jmlk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dsspl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rt3l"]
+size = Vector2(519, 498)
+
+[node name="acid" type="Node2D"]
+script = ExtResource("1_ghesg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fpjuo")
+autoplay = "default"
+frame_progress = 0.830232
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 9)
+shape = SubResource("RectangleShape2D_1rt3l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

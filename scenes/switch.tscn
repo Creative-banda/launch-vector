@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://duf0fi56llji4"]
+
+[ext_resource type="Texture2D" uid="uid://ds5qdssxa1euk" path="res://assets/tile_map/Objects/Switch (1).png" id="1_1i7pn"]
+[ext_resource type="Script" uid="uid://csqqs8nao3ng3" path="res://scripts/switch.gd" id="1_nnoiq"]
+[ext_resource type="Texture2D" uid="uid://cutgiarr4u5n3" path="res://assets/tile_map/Objects/Switch (2).png" id="2_e08h5"]
+
+[node name="switch" type="Node2D"]
+script = ExtResource("1_nnoiq")
+
+[node name="switch_on" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_1i7pn")
+
+[node name="switch_off" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_e08h5")
