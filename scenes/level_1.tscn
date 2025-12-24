@@ -83,17 +83,19 @@ tile_set = SubResource("TileSet_rus8k")
 position = Vector2(580, 458)
 scale = Vector2(0.155, 0.155)
 
-[node name="Door" parent="." instance=ExtResource("3_rus8k")]
+[node name="Door" parent="." node_paths=PackedStringArray("switch") instance=ExtResource("3_rus8k")]
 position = Vector2(47, 392)
 scale = Vector2(0.3, 0.3)
 door_type = "open"
+switch = NodePath("../switch")
 
-[node name="Door2" parent="." instance=ExtResource("3_rus8k")]
+[node name="Door2" parent="." node_paths=PackedStringArray("switch") instance=ExtResource("3_rus8k")]
 position = Vector2(1853, 162)
 scale = Vector2(0.3, 0.3)
+switch = NodePath("../switch2")
 
 [node name="player" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("4_5xbjy")]
-position = Vector2(1740, 423)
+position = Vector2(205, 381)
 scale = Vector2(0.4, 0.4)
 tileMap = NodePath("../main_map")
 

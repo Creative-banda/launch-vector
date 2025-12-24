@@ -5,6 +5,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const KNOCKBACK_VELOCITY = -400.0
+const KNOCKBACK_TIME = 0.5
+var last_knockback_time: float = 0.0
 
 var hurt: bool = false
 var life: int = 3
@@ -18,14 +20,14 @@ func _on_animation_finished() -> void:
 		hurt = false
 
 func take_damage(damage: int = 1) -> void:
-	if not is_active:
+	if not is_active or hurt or Time.get_ticks_msec() / 1000.0 < last_knockback_time + KNOCKBACK_TIME:
 		return
 
 	velocity.y = KNOCKBACK_VELOCITY # Apply knockback jump
+	last_knockback_time = Time.get_ticks_msec() / 1000.0
 	if not hurt:
 		hurt = true
 		life -= damage
-		print("Life: ", life)
 		if life <= 0:
 			is_active = false
 			animated_sprite.play("die")
@@ -38,10 +40,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta * 0.8
 	
 	# Get player input
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left", "right")
 	
 	# Handle jump (only when not hurt)
-	if not hurt and Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if not hurt and Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.play("jump")
 	

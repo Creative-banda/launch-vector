@@ -15,7 +15,6 @@ func _process(_delta: float) -> void:
 	if is_active:
 		check_if_someone_inside()
 
-
 func check_if_someone_inside():
 	var bodies = area.get_overlapping_bodies()
 	if bodies.size() > 0:
@@ -23,14 +22,11 @@ func check_if_someone_inside():
 			if body.has_method("take_damage"):
 				body.take_damage(1)
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		animation_player.play("barrel_blink")
 
-
 func on_blink_finished() -> void:
-	print("Blink finished")
 	if is_active:
 		return
 	is_active = true
@@ -38,15 +34,12 @@ func on_blink_finished() -> void:
 	barrel_2_animation.play("default")
 
 func _on_barrel_2_animation_frame_changed() -> void:
-	print("Frame changed")
-	# Get current frame
 	var current_frame = barrel_2_animation.frame
 	
 	if current_frame == 25:
 		barrel_2.visible = false
 		barrel_2_gas.visible = false
 		$StaticBody2D/CollisionShape2D.disabled = true
-
 
 func _on_barrel_2_animation_animation_finished() -> void:
 	queue_free()
