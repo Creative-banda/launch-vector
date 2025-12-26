@@ -504,7 +504,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 25.0
+"speed": 30.0
 }]
 
 [sub_resource type="Animation" id="Animation_n3fy8"]
@@ -593,7 +593,8 @@ texture_filter = 1
 position = Vector2(-3, -72)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_u5eqq")
-frame = 24
+frame = 51
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://c33115wis3g0u"]
+
+[ext_resource type="Texture2D" uid="uid://q3kawxqu1blx" path="res://assets/battery/battery-0.png" id="1_1jpel"]
+[ext_resource type="Script" uid="uid://8ai5sasgffwf" path="res://scripts/battery.gd" id="1_if1pn"]
+[ext_resource type="Texture2D" uid="uid://f3ou2r523s7q" path="res://assets/battery/battery-1.png" id="2_if1pn"]
+[ext_resource type="Texture2D" uid="uid://dpiuwxgoumncs" path="res://assets/battery/battery-2.png" id="3_vvrgo"]
+[ext_resource type="Texture2D" uid="uid://wjsvgs8r0sfh" path="res://assets/battery/battery-3.png" id="4_81qua"]
+[ext_resource type="Texture2D" uid="uid://cwkfujdtyean3" path="res://assets/battery/battery-4.png" id="5_s5yrp"]
+[ext_resource type="Texture2D" uid="uid://3lbfb5jk5akn" path="res://assets/battery/battery-5.png" id="6_oo7n7"]
+[ext_resource type="Texture2D" uid="uid://benuyq4uymmf0" path="res://assets/battery/battery-6.png" id="7_3oi2j"]
+[ext_resource type="Texture2D" uid="uid://igk3ai4s35xm" path="res://assets/battery/battery-7.png" id="8_stluv"]
+[ext_resource type="Texture2D" uid="uid://dp5xve4mxmxgd" path="res://assets/battery/battery-8.png" id="9_8yngq"]
+[ext_resource type="Texture2D" uid="uid://35748bngc0xv" path="res://assets/battery/battery-9.png" id="10_3dnxj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gd48p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1jpel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_if1pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vvrgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_81qua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5yrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oo7n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3oi2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_stluv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8yngq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3dnxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jpel"]
+size = Vector2(53, 110)
+
+[node name="Battery" type="Node2D"]
+script = ExtResource("1_if1pn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gd48p")
+autoplay = "default"
+frame = 5
+frame_progress = 0.227243
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_1jpel")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
