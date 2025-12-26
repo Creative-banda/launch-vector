@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LAUNCH VECTOR"
-run/main_scene="uid://bln8dnx56mnk7"
+run/main_scene="uid://cb7xduhn402ab"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

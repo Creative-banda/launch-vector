@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var tileMap: TileMapLayer
 @export var player_ui: CanvasLayer
 
+# Constants for scenes
+const MAIN_MENU_PATH = "res://scenes/main_menu.tscn"
+
 # Instances
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var push_area: Area2D = $PushArea
@@ -48,6 +51,9 @@ func take_damage(damage: int = 1) -> void:
 		if life <= 0:
 			is_active = false
 			animated_sprite.play("die")
+			FadeController.fade_in()
+			# Create a 0.5 second timer and on time out change scene to main menu
+			get_tree().create_timer(1.5).connect("timeout", _on_death_timer_timeout)
 		else:
 			animated_sprite.play("hurt")
 
@@ -107,3 +113,6 @@ func check_tile_damage():
 func update_battery() -> void:
 	collected_battery += 1
 	player_ui.update_label(collected_battery)
+
+func _on_death_timer_timeout() -> void:
+	get_tree().change_scene_to_file(MAIN_MENU_PATH)

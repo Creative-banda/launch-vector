@@ -76,9 +76,6 @@ sources/86 = SubResource("TileSetAtlasSource_bswci")
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_go7sj")
 
-[node name="PlayerUI" parent="." instance=ExtResource("11_2os1m")]
-visible = false
-
 [node name="lower_layer" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(2, 0)
@@ -155,7 +152,7 @@ position = Vector2(44, 115)
 mass = 1.0
 
 [node name="box2" parent="Boxes" instance=ExtResource("9_e3sih")]
-position = Vector2(617, 118)
+position = Vector2(1035, 100)
 mass = 1.0
 
 [node name="box3" parent="Boxes" instance=ExtResource("9_e3sih")]
@@ -200,3 +197,5 @@ scale = Vector2(0.425, 0.425)
 position = Vector2(2274, 206)
 rotation = 0.706858
 scale = Vector2(0.425, 0.425)
+
+[node name="PlayerUI" parent="." instance=ExtResource("11_2os1m")]
