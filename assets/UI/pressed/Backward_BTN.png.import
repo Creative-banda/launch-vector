@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qos6gfpwrepp"
-path="res://.godot/imported/acid-0.png-88f8bec31c0ebbe114288e2d876235b8.ctex"
+uid="uid://c5owg5byx4heo"
+path="res://.godot/imported/Backward_BTN.png-d3b7010a606e53cf4dc087796fd12fbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/acid-0.png"
-dest_files=["res://.godot/imported/acid-0.png-88f8bec31c0ebbe114288e2d876235b8.ctex"]
+source_file="res://assets/UI/pressed/Backward_BTN.png"
+dest_files=["res://.godot/imported/Backward_BTN.png-d3b7010a606e53cf4dc087796fd12fbc.ctex"]
 
 [params]
 

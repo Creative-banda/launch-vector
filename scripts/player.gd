@@ -1,13 +1,23 @@
 extends CharacterBody2D
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+# Export variables
 @export var tileMap: TileMapLayer
+@export var player_ui: CanvasLayer
+
+# Instances
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var push_area: Area2D = $PushArea
+
+# Constants
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const KNOCKBACK_VELOCITY = -400.0
+const PUSH_FORCE = 1000.0
 const KNOCKBACK_TIME = 0.5
-var last_knockback_time: float = 0.0
 
+
+# Variables
+var last_knockback_time: float = 0.0
 var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
@@ -15,6 +25,11 @@ var collected_battery: int = 0
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
+	# Defer the UI update to ensure player_ui is ready
+	if player_ui:
+		player_ui.call_deferred("update_label", collected_battery)
+	else:
+		print("Warning: player_ui is not assigned!")
 
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "hurt":
@@ -29,6 +44,7 @@ func take_damage(damage: int = 1) -> void:
 	if not hurt:
 		hurt = true
 		life -= damage
+		player_ui.update_healthbar(life)
 		if life <= 0:
 			is_active = false
 			animated_sprite.play("die")
@@ -69,7 +85,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		if animated_sprite.animation != "idle":
 			animated_sprite.play("idle")
-	
+
+	# Push any Rigid body
+
+	for body in push_area.get_overlapping_bodies():
+		if body is RigidBody2D:
+			var dir = (body.global_position - global_position).normalized()
+			body.apply_force(dir * PUSH_FORCE)
+
 	move_and_slide()
 	check_tile_damage()
 
@@ -80,3 +103,7 @@ func check_tile_damage():
 
 	if tile_data and tile_data.get_custom_data("damage") == 1:
 		take_damage(1)
+
+func update_battery() -> void:
+	collected_battery += 1
+	player_ui.update_label(collected_battery)

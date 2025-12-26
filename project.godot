@@ -15,6 +15,10 @@ run/main_scene="uid://bln8dnx56mnk7"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FadeController="*res://scenes/fade_controller.tscn"
+
 [display]
 
 window/size/viewport_width=922
@@ -40,6 +44,11 @@ jump={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

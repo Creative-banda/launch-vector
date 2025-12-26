@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://4r5b6caxd5sp"]
+[gd_scene load_steps=113 format=3 uid="uid://4r5b6caxd5sp"]
 
 [ext_resource type="Script" uid="uid://tacd5pgen02q" path="res://scripts/player.gd" id="1_wnwbv"]
 [ext_resource type="Texture2D" uid="uid://c2rtssc8r8afp" path="res://assets/player/Idle/Idle1.png" id="1_wqfne"]
@@ -470,6 +470,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_au7lq"]
 radius = 70.0286
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe2k6"]
+radius = 75.0067
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_wnwbv")
 
@@ -487,3 +490,9 @@ shape = SubResource("CircleShape2D_au7lq")
 limit_left = 0
 limit_top = 0
 limit_bottom = 614
+
+[node name="PushArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_qe2k6")

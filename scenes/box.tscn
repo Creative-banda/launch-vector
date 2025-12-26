@@ -3,15 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://r8g3efaaseui" path="res://assets/tile_map/Objects/Box.png" id="1_3inec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
-size = Vector2(256, 255)
+size = Vector2(77.5, 76)
 
-[node name="box" type="Node2D"]
+[node name="box" type="RigidBody2D"]
+mass = 5.0
+linear_damp = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_3inec")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_ks2v0")

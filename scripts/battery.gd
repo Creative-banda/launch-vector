@@ -1,7 +1,6 @@
 extends Node2D
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		body.collected_battery += 1
+		body.update_battery()
 		queue_free()

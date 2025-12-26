@@ -43,7 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.name)
 	if body.name == "player":
 		print("Player entered the door")
-		if door_type == "locked":
+		if door_type == "locked" or door_type == "unlocked":
 			if body.collected_battery > 0 and battery_required > 0:
 				_consume_battery(body)
 			else:

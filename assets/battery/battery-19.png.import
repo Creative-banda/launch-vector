@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddboop36dw05f"
-path="res://.godot/imported/acid-3.png-476eaca6a2b014fbde43faa5dd246937.ctex"
+uid="uid://wi35aqxmvwmd"
+path="res://.godot/imported/battery-19.png-226d58ab5b92955296c2051c15dae6cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/acid-3.png"
-dest_files=["res://.godot/imported/acid-3.png-476eaca6a2b014fbde43faa5dd246937.ctex"]
+source_file="res://assets/battery/battery-19.png"
+dest_files=["res://.godot/imported/battery-19.png-226d58ab5b92955296c2051c15dae6cb.ctex"]
 
 [params]
 

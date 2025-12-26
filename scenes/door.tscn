@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhaictgj3waan"]
+[gd_scene load_steps=7 format=3 uid="uid://bhaictgj3waan"]
 
 [ext_resource type="Texture2D" uid="uid://2mrs7cn7vvj1" path="res://assets/tile_map/Objects/DoorLocked.png" id="1_83dcw"]
 [ext_resource type="Script" uid="uid://bpq50xgs2ngob" path="res://scripts/door.gd" id="1_la1wf"]
 [ext_resource type="Texture2D" uid="uid://dlcja6ef6573d" path="res://assets/tile_map/Objects/DoorUnlocked.png" id="2_la1wf"]
 [ext_resource type="Texture2D" uid="uid://c43uwl7bfu83p" path="res://assets/tile_map/Objects/DoorOpen.png" id="3_18pbm"]
+[ext_resource type="FontFile" uid="uid://dyfaym48m0gil" path="res://assets/fonts/Starjedi.ttf" id="5_18pbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la1wf"]
 size = Vector2(280, 470)
@@ -27,10 +28,11 @@ position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_la1wf")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -34.0
-offset_top = -83.0
-offset_right = 216.0
-offset_bottom = 83.0
+offset_left = -42.0
+offset_top = -107.0
+offset_right = 208.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("5_18pbm")
 theme_override_font_sizes/font_size = 121
 text = "3"
 
