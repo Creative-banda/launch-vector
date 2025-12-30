@@ -6,7 +6,6 @@
 size = Vector2(77.5, 76)
 
 [node name="box" type="RigidBody2D"]
-mass = 5.0
 linear_damp = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

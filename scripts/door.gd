@@ -53,8 +53,8 @@ func _consume_battery(player: Node2D) -> void:
 	# Check if we should continue consuming batteries
 	if player.collected_battery > 0 and battery_required > 0:
 		# Consume one battery from player
-		player.collected_battery -= 1
 		battery_required -= 1
+		player.update_battery(-1)
 		
 		# Update the label to show remaining required batteries
 		label.text = str(battery_required)

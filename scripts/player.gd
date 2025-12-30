@@ -110,8 +110,8 @@ func check_tile_damage():
 	if tile_data and tile_data.get_custom_data("damage") == 1:
 		take_damage(1)
 
-func update_battery() -> void:
-	collected_battery += 1
+func update_battery(battery: int = 1) -> void:
+	collected_battery += battery
 	player_ui.update_label(collected_battery)
 
 func _on_death_timer_timeout() -> void:
