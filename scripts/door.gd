@@ -1,9 +1,11 @@
 extends Node2D
 
 # Export variables
-@export var door_type: String = "locked" # Options: "locked", "unlocked", "open"
+@export_enum("locked", "unlocked", "open") var door_type: String = "locked"
 @onready var lock_door: Sprite2D = $door_locked
 @export var switch: Node2D
+@export var is_exit_door: bool = false
+@export var next_level: PackedScene
 
 # Instances
 @onready var unlock_door: Sprite2D = $door_unlock
@@ -69,8 +71,10 @@ func _consume_battery(player: Node2D) -> void:
 			door_type = "open"
 			_update_door_visuals()
 			label.text = ""
+		if door_type == "open" and is_exit_door and next_level:
+			FadeController.fade_in(next_level)
 			return # Stop recursion
-		
+
 		# Call this function again after 0.5 seconds
 		await get_tree().create_timer(0.5).timeout
 		_consume_battery(player)

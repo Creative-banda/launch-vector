@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bln8dnx56mnk7"]
+[gd_scene load_steps=16 format=4 uid="uid://bln8dnx56mnk7"]
 
 [ext_resource type="Texture2D" uid="uid://c20ewm7mxg4rs" path="res://assets/tile_map/map.png" id="1_014kd"]
 [ext_resource type="Script" uid="uid://bkcwcjae0ekti" path="res://scripts/level_1.gd" id="1_go7sj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhaictgj3waan" path="res://scenes/door.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://4r5b6caxd5sp" path="res://scenes/player.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://duf0fi56llji4" path="res://scenes/switch.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://cr43fu8l0e0dc" path="res://scenes/level_2.tscn" id="5_7gny6"]
 [ext_resource type="PackedScene" uid="uid://c6chxy8d6xacn" path="res://scenes/barrel.tscn" id="6_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://omuheu6gv8bh" path="res://scenes/barrel_acid.tscn" id="7_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://56dl3ep3q1nr" path="res://scenes/acid.tscn" id="8_15mv3"]
@@ -97,9 +98,11 @@ switch = NodePath("../switch")
 position = Vector2(1853, 162)
 scale = Vector2(0.3, 0.3)
 switch = NodePath("../switch2")
+is_exit_door = true
+next_level = ExtResource("5_7gny6")
 
 [node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("4_5xbjy")]
-position = Vector2(50.0001, 405)
+position = Vector2(45, 431)
 scale = Vector2(0.4, 0.4)
 tileMap = NodePath("../main_map")
 player_ui = NodePath("../PlayerUI")
@@ -149,19 +152,15 @@ scale = Vector2(0.4, 0.4)
 
 [node name="box" parent="Boxes" instance=ExtResource("9_e3sih")]
 position = Vector2(44, 115)
-mass = 1.0
 
 [node name="box2" parent="Boxes" instance=ExtResource("9_e3sih")]
 position = Vector2(612, 113)
-mass = 1.0
 
 [node name="box3" parent="Boxes" instance=ExtResource("9_e3sih")]
 position = Vector2(2555, 421)
-mass = 1.0
 
 [node name="box4" parent="Boxes" instance=ExtResource("9_e3sih")]
 position = Vector2(3600, 491)
-mass = 1.0
 
 [node name="Acids" type="Node2D" parent="."]
 
