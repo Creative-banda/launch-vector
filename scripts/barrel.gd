@@ -33,6 +33,7 @@ func on_blink_finished() -> void:
 	# Select a random number between 1 and 3 
 	var random_animation = randi() % 3 + 1
 	barrel_1_animation.play("animation_" + str(random_animation))
+	$AudioStreamPlayer2D.play()
 
 func _on_barrel_1_animation_animation_finished() -> void:
 	queue_free()

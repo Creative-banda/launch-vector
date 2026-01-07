@@ -65,14 +65,14 @@ offset_right = 40.0
 grow_vertical = 0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Player_Controller"]
-position = Vector2(210, -116)
+position = Vector2(210, -106)
 scale = Vector2(0.614286, 0.561905)
 texture_normal = ExtResource("4_8isll")
 texture_pressed = ExtResource("5_g4s8q")
 action = "right"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Player_Controller"]
-position = Vector2(55, -116)
+position = Vector2(55, -106)
 scale = Vector2(0.614286, 0.561905)
 texture_normal = ExtResource("5_7ctsh")
 texture_pressed = ExtResource("7_17uas")

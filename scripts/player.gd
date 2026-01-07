@@ -24,7 +24,7 @@ var last_knockback_time: float = 0.0
 var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
-var collected_battery: int = 0
+var collected_battery: int = 3
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 	if not hurt and Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.play("jump")
+		AudioPlayer.play_music("jump")
 	
 	# Handle horizontal movement (allowed even when hurt)
 	if direction and is_active:
@@ -112,6 +113,7 @@ func check_tile_damage():
 
 func update_battery(battery: int = 1) -> void:
 	collected_battery += battery
+	AudioPlayer.play_music("collect")
 	player_ui.update_label(collected_battery)
 
 func _on_death_timer_timeout() -> void:

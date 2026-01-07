@@ -102,7 +102,7 @@ is_exit_door = true
 next_level = ExtResource("5_7gny6")
 
 [node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("4_5xbjy")]
-position = Vector2(45, 431)
+position = Vector2(42.0001, 418)
 scale = Vector2(0.4, 0.4)
 tileMap = NodePath("../main_map")
 player_ui = NodePath("../PlayerUI")

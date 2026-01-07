@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://5qdvwf48gpvk"]
+
+[ext_resource type="AudioStream" uid="uid://cdye2e1rid52" path="res://assets/sound_effects/background_music.mp3" id="1_1qhh7"]
+[ext_resource type="Script" uid="uid://bdhmbm2yufe2s" path="res://scripts/audio_player.gd" id="1_syohv"]
+[ext_resource type="AudioStream" uid="uid://bnp683h3j4gs3" path="res://assets/sound_effects/jump.mp3" id="2_uacmn"]
+[ext_resource type="AudioStream" uid="uid://dxxhs0uobasbj" path="res://assets/sound_effects/collect.mp3" id="3_qbjj0"]
+
+[node name="Audio_Player" type="Node2D"]
+script = ExtResource("1_syohv")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uacmn")
+volume_db = 2.85
+pitch_scale = 3.55
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qbjj0")
+volume_db = 4.0
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_1qhh7")
+volume_db = -5.0

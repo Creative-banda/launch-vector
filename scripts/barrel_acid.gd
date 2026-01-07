@@ -32,6 +32,7 @@ func on_blink_finished() -> void:
 	is_active = true
 	barrel_2_animation.visible = true
 	barrel_2_animation.play("default")
+	$AudioStreamPlayer2D.play()
 
 func _on_barrel_2_animation_frame_changed() -> void:
 	var current_frame = barrel_2_animation.frame
