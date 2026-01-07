@@ -15,8 +15,8 @@ pitch_scale = 3.55
 
 [node name="Collect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qbjj0")
-volume_db = 4.0
+volume_db = 10.0
+pitch_scale = 3.0
 
 [node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1qhh7")
-volume_db = -5.0

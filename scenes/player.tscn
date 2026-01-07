@@ -479,7 +479,7 @@ script = ExtResource("1_wnwbv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_h7ic4")
-animation = &"walk"
+animation = &"land"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
