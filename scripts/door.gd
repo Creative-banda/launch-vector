@@ -5,7 +5,7 @@ extends Node2D
 @onready var lock_door: Sprite2D = $door_locked
 @export var switch: Node2D
 @export var is_exit_door: bool = false
-@export var next_level: PackedScene
+@export var next_level: PackedScene # If set, goes to next level; if null, goes to main menu
 
 # Instances
 @onready var unlock_door: Sprite2D = $door_unlock
@@ -71,8 +71,16 @@ func _consume_battery(player: Node2D) -> void:
 			door_type = "open"
 			_update_door_visuals()
 			label.text = ""
-		if door_type == "open" and is_exit_door and next_level:
-			FadeController.fade_in(next_level)
+		if door_type == "open" and is_exit_door:
+			GlobalManager.current_level += 1
+			FadeController.fade_in()
+			await get_tree().create_timer(0.5).timeout
+			
+			# If next_level is set, go to that level; otherwise go to main menu
+			if next_level:
+				get_tree().change_scene_to_packed(next_level)
+			else:
+				get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 			return # Stop recursion
 
 		# Call this function again after 0.5 seconds

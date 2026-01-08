@@ -24,7 +24,7 @@ var last_knockback_time: float = 0.0
 var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
-var collected_battery: int = 0
+var collected_battery: int = 3
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -52,6 +52,8 @@ func take_damage(damage: int = 1) -> void:
 			is_active = false
 			animated_sprite.play("die")
 			FadeController.fade_in()
+			AudioPlayer.stop_all_music()
+			AudioPlayer.play_music("game_over")
 			# Create a 0.5 second timer and on time out change scene to main menu
 			get_tree().create_timer(1.5).connect("timeout", _on_death_timer_timeout)
 		else:

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 FadeController="*res://scenes/fade_controller.tscn"
 AudioPlayer="*res://scenes/audio_player.tscn"
+GlobalManager="*res://scenes/global_manager.tscn"
 
 [display]
 

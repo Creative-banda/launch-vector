@@ -7,7 +7,7 @@ extends Node2D
 @onready var hurt1: AudioStreamPlayer = $Hurt1
 @onready var hurt2: AudioStreamPlayer = $Hurt2
 @onready var hurt3: AudioStreamPlayer = $Hurt3
-
+@onready var game_over: AudioStreamPlayer = $Game_over
 func play_music(music: String) -> void:
 	if music == "background":
 		background_music.play()
@@ -19,6 +19,8 @@ func play_music(music: String) -> void:
 		trampoline.play()
 	elif music == "hurt":
 		[hurt1, hurt2, hurt3].pick_random().play()
+	elif music == "game_over":
+		game_over.play()
 	
 func stop_all_music() -> void:
 	background_music.stop()
