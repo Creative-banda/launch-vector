@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://56dl3ep3q1nr"]
+[gd_scene load_steps=9 format=3 uid="uid://56dl3ep3q1nr"]
 
 [ext_resource type="Texture2D" uid="uid://qos6gfpwrepp" path="res://assets/acid/acid-0.png" id="1_1rt3l"]
 [ext_resource type="Script" uid="uid://b034xg7on5t5o" path="res://scripts/acid.gd" id="1_ghesg"]
 [ext_resource type="Texture2D" uid="uid://bk5ja6lemrjif" path="res://assets/acid/acid-1.png" id="2_ghesg"]
 [ext_resource type="Texture2D" uid="uid://0lh4alsqfgbo" path="res://assets/acid/acid-2.png" id="3_jmlk6"]
 [ext_resource type="Texture2D" uid="uid://ddboop36dw05f" path="res://assets/acid/acid-3.png" id="4_dsspl"]
+[ext_resource type="AudioStream" uid="uid://cg2id0ldt4xs3" path="res://assets/sound_effects/acid.mp3" id="6_jmlk6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fpjuo"]
 animations = [{
@@ -42,5 +43,15 @@ frame_progress = 0.830232
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.5, 9)
 shape = SubResource("RectangleShape2D_1rt3l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-8, 3)
+stream = ExtResource("6_jmlk6")
+volume_db = 6.95
+pitch_scale = 0.8
+autoplay = true
+max_distance = 1000.0
+attenuation = 0.34151
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

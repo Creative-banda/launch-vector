@@ -33,6 +33,7 @@ func on_blink_finished() -> void:
 	barrel_2_animation.visible = true
 	barrel_2_animation.play("default")
 	$AudioStreamPlayer2D.play()
+	animation_player.play("blast_collision")
 
 func _on_barrel_2_animation_frame_changed() -> void:
 	var current_frame = barrel_2_animation.frame

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cr43fu8l0e0dc"]
+[gd_scene load_steps=19 format=4 uid="uid://cr43fu8l0e0dc"]
 
 [ext_resource type="Texture2D" uid="uid://c20ewm7mxg4rs" path="res://assets/tile_map/map.png" id="1_3bmlt"]
 [ext_resource type="Script" uid="uid://cjh3n82ebf753" path="res://scripts/level_2.gd" id="1_b4j7a"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://omuheu6gv8bh" path="res://scenes/barrel_acid.tscn" id="7_que50"]
 [ext_resource type="PackedScene" uid="uid://bhaictgj3waan" path="res://scenes/door.tscn" id="8_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://c6chxy8d6xacn" path="res://scenes/barrel.tscn" id="9_6cvei"]
+[ext_resource type="Texture2D" uid="uid://dk88bjk1uygjr" path="res://assets/tile_map/Objects/saw/track_piece/saw_track_left_edge.png" id="9_igmy8"]
+[ext_resource type="Texture2D" uid="uid://idjj6f77almm" path="res://assets/tile_map/Objects/saw/track_piece/saw_track_repeating_center.png" id="10_wdtqu"]
+[ext_resource type="Texture2D" uid="uid://dvaigiubw6xnl" path="res://assets/tile_map/Objects/saw/track_piece/saw_track_right_edge.png" id="11_7qsfm"]
 [ext_resource type="PackedScene" uid="uid://duf0fi56llji4" path="res://scenes/switch.tscn" id="11_hey2k"]
 [ext_resource type="PackedScene" uid="uid://c33115wis3g0u" path="res://scenes/battery.tscn" id="12_172wr"]
 
@@ -138,22 +141,121 @@ switch = NodePath("../entry_switch")
 position = Vector2(213, 409)
 scale = Vector2(0.4, 0.4)
 
-[node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("3_pbc48")]
-position = Vector2(97.0001, 424)
-scale = Vector2(0.4, 0.4)
-tileMap = NodePath("../main_map")
-player_ui = NodePath("../PlayerUI")
-
 [node name="Saws" type="Node2D" parent="."]
 
+[node name="Moving_Saw_Images" type="Node2D" parent="Saws"]
+
+[node name="SawTrackLeftEdge" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2443, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_igmy8")
+
+[node name="SawTrackRepeatingCenter" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2479, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter2" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2514, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter3" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2549, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRightEdge" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2585, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_7qsfm")
+
+[node name="SawTrackLeftEdge2" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2174.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_igmy8")
+
+[node name="SawTrackRepeatingCenter4" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2210.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter5" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2245.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter6" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2280.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter7" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2315.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter8" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2350.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRepeatingCenter9" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2385.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wdtqu")
+
+[node name="SawTrackRightEdge2" type="Sprite2D" parent="Saws/Moving_Saw_Images"]
+position = Vector2(2421.5, 145.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_7qsfm")
+
 [node name="Saw" parent="Saws" instance=ExtResource("5_y0kc7")]
-position = Vector2(2305, 530)
+position = Vector2(2311, 535)
 scale = Vector2(0.4, 0.4)
 damage = 3
 
 [node name="Saw2" parent="Saws" instance=ExtResource("5_y0kc7")]
-position = Vector2(2984, 381)
+position = Vector2(2995, 382)
 scale = Vector2(0.2, 0.2)
+
+[node name="MarkerLeft" type="Marker2D" parent="Saws"]
+position = Vector2(2461, 380)
+scale = Vector2(0.2, 0.2)
+
+[node name="MarkerRight" type="Marker2D" parent="Saws"]
+position = Vector2(2569, 380)
+scale = Vector2(0.2, 0.2)
+
+[node name="MarkerLeft2" type="Marker2D" parent="Saws"]
+position = Vector2(2192, 142)
+scale = Vector2(0.2, 0.2)
+
+[node name="MarkerRight2" type="Marker2D" parent="Saws"]
+position = Vector2(2401, 142)
+scale = Vector2(0.2, 0.2)
+
+[node name="Saw3" parent="Saws" node_paths=PackedStringArray("left_marker", "right_marker") instance=ExtResource("5_y0kc7")]
+position = Vector2(2569, 374)
+scale = Vector2(0.2, 0.2)
+is_moving = true
+left_marker = NodePath("../MarkerLeft")
+right_marker = NodePath("../MarkerRight")
+speed = 60
+
+[node name="Saw4" parent="Saws" node_paths=PackedStringArray("left_marker", "right_marker") instance=ExtResource("5_y0kc7")]
+position = Vector2(2290, 142)
+scale = Vector2(0.2, 0.2)
+is_moving = true
+left_marker = NodePath("../MarkerLeft2")
+right_marker = NodePath("../MarkerRight2")
+speed = 60
+
+[node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("3_pbc48")]
+position = Vector2(1433, 484)
+scale = Vector2(0.4, 0.4)
+tileMap = NodePath("../main_map")
+player_ui = NodePath("../PlayerUI")
 
 [node name="barrels" type="Node2D" parent="."]
 

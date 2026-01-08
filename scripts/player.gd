@@ -24,7 +24,7 @@ var last_knockback_time: float = 0.0
 var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
-var collected_battery: int = 3
+var collected_battery: int = 0
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -56,6 +56,7 @@ func take_damage(damage: int = 1) -> void:
 			get_tree().create_timer(1.5).connect("timeout", _on_death_timer_timeout)
 		else:
 			animated_sprite.play("hurt")
+			AudioPlayer.play_music("hurt")
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity when not on floor

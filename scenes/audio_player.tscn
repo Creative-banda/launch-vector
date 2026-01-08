@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://5qdvwf48gpvk"]
+[gd_scene load_steps=9 format=3 uid="uid://5qdvwf48gpvk"]
 
 [ext_resource type="AudioStream" uid="uid://cdye2e1rid52" path="res://assets/sound_effects/background_music.mp3" id="1_1qhh7"]
 [ext_resource type="Script" uid="uid://bdhmbm2yufe2s" path="res://scripts/audio_player.gd" id="1_syohv"]
 [ext_resource type="AudioStream" uid="uid://bnp683h3j4gs3" path="res://assets/sound_effects/jump.mp3" id="2_uacmn"]
 [ext_resource type="AudioStream" uid="uid://dxxhs0uobasbj" path="res://assets/sound_effects/collect.mp3" id="3_qbjj0"]
+[ext_resource type="AudioStream" uid="uid://b5vl7equ3yf7t" path="res://assets/sound_effects/hurt_1.mp3" id="3_y6xvh"]
+[ext_resource type="AudioStream" uid="uid://cswebg1x8expc" path="res://assets/sound_effects/hurt_3.mp3" id="4_50w30"]
+[ext_resource type="AudioStream" uid="uid://bektqs4a47tyk" path="res://assets/sound_effects/hurt_2.mp3" id="4_mrh1j"]
+[ext_resource type="AudioStream" uid="uid://bu23kioemrafu" path="res://assets/sound_effects/trampoline_sound.mp3" id="5_mfaxx"]
 
 [node name="Audio_Player" type="Node2D"]
 script = ExtResource("1_syohv")
@@ -13,10 +17,30 @@ stream = ExtResource("2_uacmn")
 volume_db = 2.85
 pitch_scale = 3.55
 
+[node name="Hurt1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y6xvh")
+volume_db = 2.85
+pitch_scale = 3.55
+
+[node name="Hurt2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mrh1j")
+volume_db = 2.85
+pitch_scale = 3.55
+
+[node name="Hurt3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_50w30")
+volume_db = 2.85
+pitch_scale = 3.55
+
 [node name="Collect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qbjj0")
-volume_db = 10.0
-pitch_scale = 3.0
+volume_db = 20.0
+pitch_scale = 1.06
 
 [node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1qhh7")
+parameters/looping = true
+
+[node name="Trampoline" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mfaxx")
+volume_db = 5.0
