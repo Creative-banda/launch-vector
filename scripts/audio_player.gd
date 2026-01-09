@@ -8,6 +8,7 @@ extends Node2D
 @onready var hurt2: AudioStreamPlayer = $Hurt2
 @onready var hurt3: AudioStreamPlayer = $Hurt3
 @onready var game_over: AudioStreamPlayer = $Game_over
+
 func play_music(music: String) -> void:
 	if music == "background":
 		background_music.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cr43fu8l0e0dc"]
+[gd_scene load_steps=19 format=4 uid="uid://cr43fu8l0e0dc"]
 
 [ext_resource type="Texture2D" uid="uid://c20ewm7mxg4rs" path="res://assets/tile_map/map.png" id="1_3bmlt"]
 [ext_resource type="Script" uid="uid://cjh3n82ebf753" path="res://scripts/level_2.gd" id="1_b4j7a"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b2budahnr60km" path="res://scenes/player_ui.tscn" id="4_eqxsl"]
 [ext_resource type="AudioStream" uid="uid://cg2id0ldt4xs3" path="res://assets/sound_effects/acid.mp3" id="4_g2hoc"]
 [ext_resource type="PackedScene" uid="uid://c8eiqtw6m6uvw" path="res://scenes/saw.tscn" id="5_y0kc7"]
-[ext_resource type="PackedScene" uid="uid://cb7xduhn402ab" path="res://scenes/main_menu.tscn" id="6_wdtqu"]
 [ext_resource type="PackedScene" uid="uid://cy2jyik35npj7" path="res://scenes/box.tscn" id="6_wo48x"]
 [ext_resource type="PackedScene" uid="uid://omuheu6gv8bh" path="res://scenes/barrel_acid.tscn" id="7_que50"]
 [ext_resource type="PackedScene" uid="uid://bhaictgj3waan" path="res://scenes/door.tscn" id="8_ne2mo"]
@@ -127,7 +126,6 @@ position = Vector2(77, 160)
 scale = Vector2(0.3, 0.3)
 switch = NodePath("../exit_switch")
 is_exit_door = true
-next_level = ExtResource("6_wdtqu")
 
 [node name="exit_switch" parent="doors" instance=ExtResource("11_hey2k")]
 position = Vector2(172, 179)
@@ -254,7 +252,7 @@ right_marker = NodePath("../MarkerRight2")
 speed = 60
 
 [node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("3_pbc48")]
-position = Vector2(851, 98)
+position = Vector2(107, 394)
 scale = Vector2(0.4, 0.4)
 tileMap = NodePath("../main_map")
 player_ui = NodePath("../PlayerUI")

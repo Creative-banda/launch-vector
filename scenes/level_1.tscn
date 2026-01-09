@@ -266,7 +266,7 @@ position = Vector2(3566, 142)
 position = Vector2(3091, 142)
 
 [node name="player" parent="." node_paths=PackedStringArray("tileMap", "player_ui") instance=ExtResource("4_5xbjy")]
-position = Vector2(1972, 174)
+position = Vector2(48.0001, 402)
 scale = Vector2(0.4, 0.4)
 tileMap = NodePath("../main_map")
 player_ui = NodePath("../PlayerUI")

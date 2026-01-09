@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb7xduhn402ab"]
+[gd_scene load_steps=5 format=3 uid="uid://d0g1josps1y1m"]
 
-[ext_resource type="Script" uid="uid://ye5mipvdj3j4" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Script" uid="uid://djddvpeiqff04" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bk3ccg7cxebrp" path="res://assets/main_menu/main_menu.png" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bcf0u4txqe5r8" path="res://assets/main_menu/play.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://1j6im504gl0k" path="res://assets/main_menu/quit.png" id="3_bqqt6"]
 
-[node name="main_menu" type="CanvasLayer"]
+[node name="Main_Menu" type="Node2D"]
 script = ExtResource("1_8ln24")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,39 +28,47 @@ grow_vertical = 2
 texture = ExtResource("1_l6cm7")
 expand_mode = 1
 
-[node name="Play" type="Button" parent="Control"]
+[node name="Play" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.0
-offset_top = -75.0
-offset_right = 152.0
-offset_bottom = 87.0
+offset_left = -193.0
+offset_top = -155.5
+offset_right = 193.0
+offset_bottom = -0.5
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("2_ekxnf")
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+theme_override_icons/icon = ExtResource("2_ekxnf")
 flat = true
+autowrap_mode = 2
+icon_alignment = 1
 expand_icon = true
 
-[node name="Quit" type="Button" parent="Control"]
+[node name="Quit" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = 46.0
-offset_right = 162.0
-offset_bottom = 205.0
+offset_left = -167.0
+offset_top = -1.0
+offset_right = 199.0
+offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("3_bqqt6")
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+theme_override_icons/icon = ExtResource("3_bqqt6")
 flat = true
+autowrap_mode = 2
+icon_alignment = 1
 expand_icon = true
 
-[connection signal="button_down" from="Control/Play" to="." method="_on_play_button_down"]
-[connection signal="button_down" from="Control/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="CanvasLayer/Control/Play" to="." method="_on_play_button_up"]
+[connection signal="button_down" from="CanvasLayer/Control/Quit" to="." method="_on_quit_button_down"]
