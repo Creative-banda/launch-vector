@@ -24,7 +24,7 @@ var last_knockback_time: float = 0.0
 var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
-var collected_battery: int = 3
+var collected_battery: int = 0
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)

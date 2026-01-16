@@ -330,7 +330,7 @@ position = Vector2(384, 544)
 scale = Vector2(0.33, 0.27)
 
 [node name="acid2" parent="Acids" instance=ExtResource("8_15mv3")]
-position = Vector2(1385, 544)
+position = Vector2(1386, 545)
 scale = Vector2(0.33, 0.27)
 
 [node name="acid4" parent="Acids" instance=ExtResource("8_15mv3")]
