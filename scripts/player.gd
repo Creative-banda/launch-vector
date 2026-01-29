@@ -67,7 +67,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 0.8
 		if jump_timer.is_stopped():
-			print("Starting the timer")
 			jump_timer.start(0.2)
 	else:
 		canJump = true
@@ -131,4 +130,3 @@ func _on_death_timer_timeout() -> void:
 
 func _on_timer_timeout() -> void:
 	canJump = false
-	print("Jump is false now from timer")

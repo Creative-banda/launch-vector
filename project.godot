@@ -13,7 +13,7 @@ config_version=5
 config/name="LAUNCH VECTOR"
 run/main_scene="uid://d0g1josps1y1m"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://bv1ccf2t528wc"
 
 [autoload]
 
@@ -54,3 +54,4 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.117647, 0.121569, 0.160784, 1)

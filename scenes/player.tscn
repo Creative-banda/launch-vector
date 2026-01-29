@@ -483,17 +483,14 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_au7lq")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_bottom = 614
 
 [node name="PushArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+visible = false
 position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_qe2k6")
 
