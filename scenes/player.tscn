@@ -496,3 +496,8 @@ limit_bottom = 614
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
 position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_qe2k6")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

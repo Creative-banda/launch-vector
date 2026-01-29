@@ -10,6 +10,7 @@ const MAIN_MENU_PATH = "res://scenes/main_menu.tscn"
 # Instances
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var push_area: Area2D = $PushArea
+@onready var jump_timer : Timer = $Timer
 
 # Constants
 const SPEED = 300.0
@@ -25,6 +26,7 @@ var hurt: bool = false
 var life: int = 3
 var is_active: bool = true
 var collected_battery: int = 0
+var canJump: bool = true
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -64,12 +66,16 @@ func _physics_process(delta: float) -> void:
 	# Apply gravity when not on floor
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 0.8
-	
+		if jump_timer.is_stopped():
+			print("Starting the timer")
+			jump_timer.start(0.2)
+	else:
+		canJump = true
 	# Get player input
 	var direction := Input.get_axis("left", "right")
 	
 	# Handle jump (only when not hurt)
-	if not hurt and Input.is_action_just_pressed("jump") and is_on_floor():
+	if not hurt and Input.is_action_just_pressed("jump") and canJump:
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.play("jump")
 		AudioPlayer.play_music("jump")
@@ -121,3 +127,8 @@ func update_battery(battery: int = 1) -> void:
 
 func _on_death_timer_timeout() -> void:
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
+
+
+func _on_timer_timeout() -> void:
+	canJump = false
+	print("Jump is false now from timer")
