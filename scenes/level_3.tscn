@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c6e4nv3j3gd6f"]
+[gd_scene load_steps=19 format=4 uid="uid://c6e4nv3j3gd6f"]
 
 [ext_resource type="Script" uid="uid://cjh3n82ebf753" path="res://scripts/level_2.gd" id="1_5xqnf"]
 [ext_resource type="Texture2D" uid="uid://c20ewm7mxg4rs" path="res://assets/tile_map/map.png" id="1_70nk6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://wlpubq7nxd0l" path="res://scenes/trampoline.tscn" id="11_56dhn"]
 [ext_resource type="PackedScene" uid="uid://c33115wis3g0u" path="res://scenes/battery.tscn" id="12_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://c6chxy8d6xacn" path="res://scenes/barrel.tscn" id="13_q2dsb"]
+[ext_resource type="PackedScene" uid="uid://cy2jyik35npj7" path="res://scenes/box.tscn" id="16_una4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h23n6"]
 texture = ExtResource("1_70nk6")
@@ -350,3 +351,6 @@ scale = Vector2(0.425, 0.425)
 position = Vector2(984, 1481)
 rotation = 0.523599
 scale = Vector2(0.425, 0.425)
+
+[node name="box" parent="." instance=ExtResource("16_una4e")]
+position = Vector2(1424, 919)
