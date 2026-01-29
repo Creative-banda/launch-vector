@@ -300,7 +300,6 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="PlayerUI" parent="." instance=ExtResource("9_vcx5n")]
-visible = false
 
 [node name="trampoline" type="Node2D" parent="."]
 
