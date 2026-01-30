@@ -10,7 +10,6 @@ extends Node2D
 func _ready() -> void:
 	audio_stream_player_2d.play()
 
-
 func _process(_delta: float) -> void:
 	if not is_moving:
 		return

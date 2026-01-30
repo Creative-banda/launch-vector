@@ -3,7 +3,6 @@ extends CharacterBody2D
 # Export variables
 @export var tileMap: TileMapLayer
 @export var player_ui: CanvasLayer
-
 # Constants for scenes
 const MAIN_MENU_PATH = "res://scenes/level_selector.tscn"
 

@@ -13,7 +13,8 @@ config_version=5
 config/name="LAUNCH VECTOR"
 run/main_scene="uid://d0g1josps1y1m"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="uid://bv1ccf2t528wc"
+boot_splash/image="uid://cy26m4m5ynt62"
+config/icon="uid://dx7bynid6y2pt"
 
 [autoload]
 

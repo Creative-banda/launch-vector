@@ -349,7 +349,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -479,8 +479,9 @@ script = ExtResource("1_wnwbv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_h7ic4")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.84472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
