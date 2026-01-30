@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://clgaxbuid6jt2"]
+
+[ext_resource type="Texture2D" uid="uid://d2inw8vmmf5x4" path="res://assets/UI/level_selector/background.png" id="1_aeu7d"]
+[ext_resource type="Texture2D" uid="uid://cvo78d71eqpkp" path="res://assets/UI/level_selector/leve_selector_frame.png" id="2_gkmvm"]
+[ext_resource type="Texture2D" uid="uid://pkw87byepe0i" path="res://assets/UI/level_selector/level_button.png" id="3_tr5s6"]
+[ext_resource type="FontFile" uid="uid://dyfaym48m0gil" path="res://assets/fonts/Starjedi.ttf" id="4_rqfkl"]
+[ext_resource type="Script" uid="uid://dg1qt8tqtxxg8" path="res://scripts/level-select_button.gd" id="4_vj03c"]
+[ext_resource type="PackedScene" uid="uid://bln8dnx56mnk7" path="res://scenes/level_1.tscn" id="5_hjtau"]
+[ext_resource type="PackedScene" uid="uid://cr43fu8l0e0dc" path="res://scenes/level_2.tscn" id="7_56kad"]
+[ext_resource type="PackedScene" uid="uid://c6e4nv3j3gd6f" path="res://scenes/level_3.tscn" id="8_2ec5i"]
+
+[node name="LevelSelector" type="CanvasLayer"]
+
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aeu7d")
+expand_mode = 1
+
+[node name="MenuContainer" type="NinePatchRect" parent="background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="frame" type="TextureRect" parent="background/MenuContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -482.0
+offset_top = -287.0
+offset_right = 446.0
+offset_bottom = 285.0
+grow_horizontal = 2
+texture = ExtResource("2_gkmvm")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="background/MenuContainer/frame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 114.0
+offset_right = 974.0
+offset_bottom = 649.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_right = -315
+theme_override_constants/margin_bottom = 270
+
+[node name="HBoxContainer" type="HBoxContainer" parent="background/MenuContainer/frame/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="level_1" type="Button" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_tr5s6")
+flat = true
+script = ExtResource("4_vj03c")
+level = ExtResource("5_hjtau")
+
+[node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -86.0
+offset_right = 26.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rqfkl")
+theme_override_font_sizes/font_size = 100
+text = "1"
+
+[node name="level_2" type="Button" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_tr5s6")
+flat = true
+script = ExtResource("4_vj03c")
+level = ExtResource("7_56kad")
+
+[node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -86.0
+offset_right = 29.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rqfkl")
+theme_override_font_sizes/font_size = 100
+text = "2"
+
+[node name="level_3" type="Button" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_tr5s6")
+flat = true
+script = ExtResource("4_vj03c")
+level = ExtResource("8_2ec5i")
+
+[node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -86.0
+offset_right = 29.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rqfkl")
+theme_override_font_sizes/font_size = 100
+text = "3"
+
+[node name="level_4" type="Button" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_tr5s6")
+flat = true
+script = ExtResource("4_vj03c")
+isLocked = true
+
+[node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -86.0
+offset_right = 35.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rqfkl")
+theme_override_font_sizes/font_size = 100
+text = "4"
+
+[node name="level_5" type="Button" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_tr5s6")
+flat = true
+script = ExtResource("4_vj03c")
+isLocked = true
+
+[node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -86.0
+offset_right = 29.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rqfkl")
+theme_override_font_sizes/font_size = 100
+text = "5"
+
+[connection signal="button_down" from="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_1" to="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_1" method="_on_button_down"]
+[connection signal="button_down" from="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_2" to="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_2" method="_on_button_down"]
+[connection signal="button_down" from="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_3" to="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_3" method="_on_button_down"]
+[connection signal="button_down" from="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_4" to="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_4" method="_on_button_down"]
+[connection signal="button_down" from="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_5" to="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_5" method="_on_button_down"]

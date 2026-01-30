@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var player_ui: CanvasLayer
 
 # Constants for scenes
-const MAIN_MENU_PATH = "res://scenes/main_menu.tscn"
+const MAIN_MENU_PATH = "res://scenes/level_selector.tscn"
 
 # Instances
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

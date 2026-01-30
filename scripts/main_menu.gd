@@ -11,8 +11,5 @@ func _on_quit_button_down() -> void:
 
 
 func _on_play_button_up() -> void:
-	if GlobalManager.current_level == 1:
-		level_to_change = preload("res://scenes/level_1.tscn")
-	else:
-		level_to_change = preload("res://scenes/level_2.tscn")
+	level_to_change = preload("res://scenes/level_selector.tscn")
 	FadeController.fade_in(level_to_change)
