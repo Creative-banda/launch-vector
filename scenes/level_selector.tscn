@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://clgaxbuid6jt2"]
+[gd_scene load_steps=10 format=3 uid="uid://clgaxbuid6jt2"]
 
+[ext_resource type="Script" uid="uid://1p6uds064r6a" path="res://scripts/level_selector.gd" id="1_5lm0q"]
 [ext_resource type="Texture2D" uid="uid://d2inw8vmmf5x4" path="res://assets/UI/level_selector/background.png" id="1_aeu7d"]
 [ext_resource type="Texture2D" uid="uid://cvo78d71eqpkp" path="res://assets/UI/level_selector/leve_selector_frame.png" id="2_gkmvm"]
 [ext_resource type="Texture2D" uid="uid://pkw87byepe0i" path="res://assets/UI/level_selector/level_button.png" id="3_tr5s6"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c6e4nv3j3gd6f" path="res://scenes/level_3.tscn" id="8_2ec5i"]
 
 [node name="LevelSelector" type="CanvasLayer"]
+script = ExtResource("1_5lm0q")
 
 [node name="background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -136,7 +138,6 @@ layout_mode = 2
 icon = ExtResource("3_tr5s6")
 flat = true
 script = ExtResource("4_vj03c")
-isLocked = true
 
 [node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_4"]
 layout_mode = 1
@@ -160,7 +161,6 @@ layout_mode = 2
 icon = ExtResource("3_tr5s6")
 flat = true
 script = ExtResource("4_vj03c")
-isLocked = true
 
 [node name="Label" type="Label" parent="background/MenuContainer/frame/MarginContainer/HBoxContainer/level_5"]
 layout_mode = 1

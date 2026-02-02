@@ -481,7 +481,6 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_h7ic4")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.84472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -497,5 +496,8 @@ shape = SubResource("CircleShape2D_qe2k6")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="dust_spawner" type="Marker2D" parent="."]
+position = Vector2(4, 47)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

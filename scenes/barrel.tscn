@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c6chxy8d6xacn"]
+[gd_scene load_steps=77 format=3 uid="uid://c6chxy8d6xacn"]
 
 [ext_resource type="Script" uid="uid://caif7rmb8vjfl" path="res://scripts/barrel.gd" id="1_7fvt2"]
 [ext_resource type="Texture2D" uid="uid://bv8rcwpjw03lv" path="res://assets/tile_map/Objects/Barrel (1).png" id="1_ptqd7"]
@@ -302,6 +302,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D2/CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [196.652]
+}
 
 [sub_resource type="Animation" id="Animation_1p2i6"]
 resource_name = "blink"
@@ -333,10 +345,27 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_8xh8s"]
+resource_name = "collision_shape"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/CollisionShape2D:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00715627, 0.216477, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [23.5372, 170.66, 170.66, 23.5372]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ychr6"]
 _data = {
 &"RESET": SubResource("Animation_fnssh"),
-&"blink": SubResource("Animation_1p2i6")
+&"blink": SubResource("Animation_1p2i6"),
+&"collision_shape": SubResource("Animation_8xh8s")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpkda"]

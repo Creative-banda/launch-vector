@@ -7,12 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://r8k0043bf244" path="res://assets/main_menu/exit.png" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://dyl7aox2pr0t8" path="res://assets/main_menu/options.png" id="5_rtw2f"]
 
-[node name="Main_Menu" type="Node2D"]
+[node name="Main_Menu" type="CanvasLayer"]
 script = ExtResource("1_8ln24")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,15 +18,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = 1.0
-offset_right = 12.0
-offset_bottom = -3.0
+offset_top = -1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_rtw2f")
@@ -36,7 +33,7 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="middle_frame" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="middle_frame" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,15 +49,15 @@ grow_vertical = 2
 texture = ExtResource("3_8ln24")
 expand_mode = 1
 
-[node name="Play" type="Button" parent="CanvasLayer/Control/middle_frame"]
+[node name="Play" type="Button" parent="Control/middle_frame"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -111.5
-offset_top = 39.0
+offset_top = 50.0
 offset_right = 111.5
-offset_bottom = 117.0
+offset_bottom = 128.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 1
 theme_override_icons/icon = ExtResource("2_ekxnf")
@@ -70,7 +67,7 @@ autowrap_mode = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Option" type="Button" parent="CanvasLayer/Control/middle_frame"]
+[node name="Option" type="Button" parent="Control/middle_frame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,9 +75,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -111.5
-offset_top = -38.5
-offset_right = 112.5
-offset_bottom = 40.5
+offset_top = -45.5
+offset_right = 111.5
+offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 1
@@ -92,19 +89,19 @@ autowrap_mode = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Exit" type="Button" parent="CanvasLayer/Control/middle_frame"]
+[node name="Exit" type="Button" parent="Control/middle_frame"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -115.5
-offset_top = -119.0
-offset_right = 115.5
-offset_bottom = -38.0
+offset_top = 27.5
+offset_right = 111.5
+offset_bottom = 108.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_font_sizes/font_size = 1
 theme_override_icons/icon = ExtResource("2_ekxnf")
 text = "gdfgdfg"
@@ -114,6 +111,6 @@ autowrap_mode = 2
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="button_up" from="CanvasLayer/Control/middle_frame/Play" to="." method="_on_play_button_up"]
-[connection signal="button_up" from="CanvasLayer/Control/middle_frame/Option" to="." method="_on_play_button_up"]
-[connection signal="button_up" from="CanvasLayer/Control/middle_frame/Exit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="Control/middle_frame/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="Control/middle_frame/Option" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="Control/middle_frame/Exit" to="." method="_on_quit_button_down"]

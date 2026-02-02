@@ -1,9 +1,7 @@
-extends Node2D
+extends CanvasLayer
 
 var level_to_change: PackedScene
 
-func _ready() -> void:
-	FadeController.fade_out()
 
 
 func _on_quit_button_down() -> void:

@@ -79,6 +79,7 @@ func _consume_battery(player: Node2D) -> void:
 			# If next_level is set, go to that level; otherwise go to main menu
 			if next_level:
 				get_tree().change_scene_to_packed(next_level)
+				unlock_next_level(GlobalManager.current_level)
 			else:
 				get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 			return # Stop recursion
@@ -86,3 +87,11 @@ func _consume_battery(player: Node2D) -> void:
 		# Call this function again after 0.5 seconds
 		await get_tree().create_timer(0.5).timeout
 		_consume_battery(player)
+
+
+func unlock_next_level(current_level: int):
+	var nextLevel := "level_%d" % (current_level)
+
+	if GlobalManager.data["levels"].has(nextLevel):
+		GlobalManager.data["levels"][nextLevel] = true
+		GlobalManager.save_game()

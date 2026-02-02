@@ -18,9 +18,9 @@ func check_if_someone_inside():
 	if bodies.size() > 0:
 		for body in bodies:
 			if body.has_method("take_damage"):
-				body.take_damage(1)
-				
-				
+				body.take_damage(global_position, 1)
+
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		animation_player.play("blink")
