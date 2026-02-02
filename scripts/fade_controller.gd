@@ -14,7 +14,6 @@ func fade_in(next_scene: PackedScene = null) -> void:
 	if next_scene:
 		get_tree().change_scene_to_packed(next_scene)
 	# Move back down after fade (though scene will change anyway)
-	layer = -1
 
 func fade_out() -> void:
 	# Move to top layer during fade

@@ -145,10 +145,7 @@ func _physics_process(delta: float) -> void:
 		is_jumping = false
 	
 	# Handle horizontal movement with acceleration/deceleration
-	if in_knockback:
-		# During knockback, smoothly decelerate
-		velocity.x = move_toward(velocity.x, 0, KNOCKBACK_DECELERATION * delta)
-	elif direction and is_active:
+	if direction and is_active:
 		# Apply acceleration (different for ground vs air)
 		var accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
 		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
