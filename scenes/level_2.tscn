@@ -307,7 +307,6 @@ tile_map_data = PackedByteArray("AAAAAAcAVgAHAAEAAAABAAcAVgAHAAEAAAACAAcAVgAIAAE
 tile_set = SubResource("TileSet_pbc48")
 
 [node name="PlayerUI" parent="." instance=ExtResource("4_eqxsl")]
-visible = false
 
 [node name="Hearts" type="Node2D" parent="."]
 

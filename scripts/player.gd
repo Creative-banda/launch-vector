@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Export variables
 @export var tileMap: TileMapLayer
 @export var player_ui: CanvasLayer
+
 # Constants for scenes
 const MAIN_MENU_PATH = "res://scenes/level_selector.tscn"
 
@@ -28,7 +29,7 @@ const JUMP_BUFFER_TIME = 0.1  # Remember jump input before landing
 # Combat Constants
 const KNOCKBACK_VELOCITY = -400.0
 const KNOCKBACK_HORIZONTAL = 500.0
-const PUSH_FORCE = 1000.0
+const PUSH_FORCE = 900.0
 const KNOCKBACK_TIME = 0.5
 const KNOCKBACK_DECELERATION = 1500.0
 
@@ -220,9 +221,9 @@ func _apply_squash_stretch(scale_target: Vector2) -> void:
 	tween.set_trans(Tween.TRANS_BACK)
 	
 	# Squash/stretch
-	tween.tween_property(animated_sprite, "scale", scale_target, SQUASH_DURATION * 0.5)
+	tween.tween_property(animated_sprite, "scale", scale_target, SQUASH_DURATION)
 	# Return to normal
-	tween.tween_property(animated_sprite, "scale", Vector2.ONE, SQUASH_DURATION * 0.5)
+	tween.tween_property(animated_sprite, "scale", Vector2.ONE, SQUASH_DURATION)
 
 func _spawn_dust_particles(fall_distance: float = 0.0) -> void:
 	"""Spawn dust particles at the bottom of the player when landing"""
@@ -249,7 +250,7 @@ func _spawn_dust_particles(fall_distance: float = 0.0) -> void:
 	print("Dust spawned at fall distance: ", fall_distance, " with scale: ", dust_scale)
 
 func check_tile_damage():
-	var local_pos := tileMap.to_local(global_position + Vector2(0, 8))
+	var local_pos := tileMap.to_local(global_position + Vector2(0, 10))
 	var cell := tileMap.local_to_map(local_pos)
 	var tile_data := tileMap.get_cell_tile_data(cell)
 
