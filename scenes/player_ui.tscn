@@ -22,18 +22,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(45, 47)
-scale = Vector2(0.15, 0.15)
+position = Vector2(46, 52)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_jkj6h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Control"]
-position = Vector2(121, 47)
-scale = Vector2(0.15, 0.15)
+position = Vector2(122, 52)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_jkj6h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Control"]
-position = Vector2(197, 47)
-scale = Vector2(0.15, 0.15)
+position = Vector2(198, 52)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_jkj6h")
 
 [node name="Label" type="Label" parent="Control"]
