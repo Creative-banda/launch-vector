@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5owg5byx4heo"
-path="res://.godot/imported/Backward_BTN.png-d3b7010a606e53cf4dc087796fd12fbc.ctex"
+uid="uid://btwggvjgqcxl2"
+path="res://.godot/imported/new_tile_map.png-6723dd868768c0ed68cd602afd3f8285.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/pressed/Backward_BTN.png"
-dest_files=["res://.godot/imported/Backward_BTN.png-d3b7010a606e53cf4dc087796fd12fbc.ctex"]
+source_file="res://assets/tile_map/new_tile_map.png"
+dest_files=["res://.godot/imported/new_tile_map.png-6723dd868768c0ed68cd602afd3f8285.ctex"]
 
 [params]
 

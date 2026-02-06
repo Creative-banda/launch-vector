@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func _on_button_down() -> void:
 	print("Button pressed")
+	AudioPlayer.stop_all_music()
 	if isLocked:
 		return
 	# get_tree().change_scene_to_packed(level)

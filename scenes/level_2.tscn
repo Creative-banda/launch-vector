@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cr43fu8l0e0dc"]
+[gd_scene load_steps=20 format=4 uid="uid://cr43fu8l0e0dc"]
 
 [ext_resource type="Texture2D" uid="uid://c20ewm7mxg4rs" path="res://assets/tile_map/map.png" id="1_3bmlt"]
 [ext_resource type="Script" uid="uid://cjh3n82ebf753" path="res://scripts/level_2.gd" id="1_b4j7a"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://4r5b6caxd5sp" path="res://scenes/player.tscn" id="3_pbc48"]
 [ext_resource type="PackedScene" uid="uid://c6e4nv3j3gd6f" path="res://scenes/level_3.tscn" id="4_7qsfm"]
 [ext_resource type="PackedScene" uid="uid://b2budahnr60km" path="res://scenes/player_ui.tscn" id="4_eqxsl"]
-[ext_resource type="AudioStream" uid="uid://cg2id0ldt4xs3" path="res://assets/sound_effects/acid.mp3" id="4_g2hoc"]
 [ext_resource type="PackedScene" uid="uid://c8eiqtw6m6uvw" path="res://scenes/saw.tscn" id="5_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://cy2jyik35npj7" path="res://scenes/box.tscn" id="6_wo48x"]
 [ext_resource type="PackedScene" uid="uid://omuheu6gv8bh" path="res://scenes/barrel_acid.tscn" id="7_que50"]
@@ -269,6 +268,7 @@ position = Vector2(2963, 110)
 [node name="acid" parent="Acids" instance=ExtResource("2_jm1iu")]
 position = Vector2(847, 511)
 scale = Vector2(0.3, 0.395)
+isSoundOn = false
 
 [node name="acid4" parent="Acids" instance=ExtResource("2_jm1iu")]
 position = Vector2(311, 559)
@@ -281,24 +281,6 @@ scale = Vector2(0.3, 0.395)
 [node name="acid2" parent="Acids" instance=ExtResource("2_jm1iu")]
 position = Vector2(1000, 511)
 scale = Vector2(0.3, 0.395)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Acids"]
-position = Vector2(894, 514)
-stream = ExtResource("4_g2hoc")
-pitch_scale = 0.75
-autoplay = true
-max_distance = 1000.0
-attenuation = 2.21914
-parameters/looping = true
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Acids"]
-position = Vector2(2765, 449)
-stream = ExtResource("4_g2hoc")
-pitch_scale = 0.75
-autoplay = true
-max_distance = 1000.0
-attenuation = 2.21914
-parameters/looping = true
 
 [node name="main_map" type="TileMapLayer" parent="."]
 position = Vector2(2, -2)

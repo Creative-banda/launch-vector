@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmbj5mc4dly6x"
-path="res://.godot/imported/Jump_BTN.png-2b3e0e976c6def3d207b569c50d5f457.ctex"
+uid="uid://nyej7fwqe6fk"
+path="res://.godot/imported/button_left.png-032218d230bc7aae7aac2f557a5c79bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/normal/Jump_BTN.png"
-dest_files=["res://.godot/imported/Jump_BTN.png-2b3e0e976c6def3d207b569c50d5f457.ctex"]
+source_file="res://assets/UI/normal/button_left.png"
+dest_files=["res://.godot/imported/button_left.png-032218d230bc7aae7aac2f557a5c79bc.ctex"]
 
 [params]
 

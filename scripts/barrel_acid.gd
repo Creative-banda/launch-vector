@@ -21,9 +21,13 @@ func check_if_someone_inside():
 		for body in bodies:
 			if body.has_method("take_damage"):
 				body.take_damage(global_position,1)
+			elif body.name.contains("box"):
+				# Apply Force so box gets pushed
+				var direction = (body.global_position - global_position).normalized()
+				body.apply_impulse(direction * 300)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body.name == "player" or body.name.contains("box"):
 		animation_player.play("barrel_blink")
 
 func on_blink_finished() -> void:

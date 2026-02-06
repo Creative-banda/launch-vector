@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dnmdhv1ypsnmc" path="res://scripts/player_ui.gd" id="1_48xfa"]
 [ext_resource type="Texture2D" uid="uid://boxl4agm0l5x0" path="res://assets/player/heart.png" id="1_jkj6h"]
 [ext_resource type="FontFile" uid="uid://dyfaym48m0gil" path="res://assets/fonts/Starjedi.ttf" id="2_sk4pr"]
-[ext_resource type="Texture2D" uid="uid://cjc5cpjagt5u7" path="res://assets/UI/normal/Forward_BTN.png" id="4_8isll"]
-[ext_resource type="Texture2D" uid="uid://bf7esfuk4n22x" path="res://assets/UI/normal/Backward_BTN.png" id="5_7ctsh"]
-[ext_resource type="Texture2D" uid="uid://blwxjhx3ijnxy" path="res://assets/UI/pressed/Forward_BTN.png" id="5_g4s8q"]
-[ext_resource type="Texture2D" uid="uid://c5owg5byx4heo" path="res://assets/UI/pressed/Backward_BTN.png" id="7_17uas"]
-[ext_resource type="Texture2D" uid="uid://bmbj5mc4dly6x" path="res://assets/UI/normal/Jump_BTN.png" id="8_1c0bc"]
-[ext_resource type="Texture2D" uid="uid://i6lbmy4vs20" path="res://assets/UI/pressed/Jump_BTN.png" id="9_2tylp"]
+[ext_resource type="Texture2D" uid="uid://f14veyolp2ol" path="res://assets/UI/normal/button_right.png" id="4_g4s8q"]
+[ext_resource type="Texture2D" uid="uid://dfygoiompf1n0" path="res://assets/UI/pressed/right_button.png" id="5_g4s8q"]
+[ext_resource type="Texture2D" uid="uid://nyej7fwqe6fk" path="res://assets/UI/normal/button_left.png" id="6_g4s8q"]
+[ext_resource type="Texture2D" uid="uid://b1bkl8e0rrqw6" path="res://assets/UI/normal/button_jump.png" id="6_n31oh"]
+[ext_resource type="Texture2D" uid="uid://bd3orfsdm0tfm" path="res://assets/UI/pressed/button_left.png" id="7_17uas"]
+[ext_resource type="Texture2D" uid="uid://d152k2j7o8qh1" path="res://assets/UI/pressed/button_jump.png" id="9_1c0bc"]
 
 [node name="PlayerUI" type="CanvasLayer"]
 script = ExtResource("1_48xfa")
@@ -53,7 +53,7 @@ theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("2_sk4pr")
 theme_override_font_sizes/font_size = 30
-text = "Battery : 2"
+text = "Battery : 0"
 
 [node name="Player_Controller" type="Control" parent="."]
 layout_mode = 3
@@ -67,14 +67,14 @@ grow_vertical = 0
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Player_Controller"]
 position = Vector2(210, -106)
 scale = Vector2(0.614286, 0.561905)
-texture_normal = ExtResource("4_8isll")
+texture_normal = ExtResource("4_g4s8q")
 texture_pressed = ExtResource("5_g4s8q")
 action = "right"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Player_Controller"]
 position = Vector2(55, -106)
 scale = Vector2(0.614286, 0.561905)
-texture_normal = ExtResource("5_7ctsh")
+texture_normal = ExtResource("6_g4s8q")
 texture_pressed = ExtResource("7_17uas")
 action = "left"
 
@@ -85,14 +85,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -206.0
+offset_top = -221.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Control2"]
-position = Vector2(-171, -171)
-scale = Vector2(0.288, 0.278)
-texture_normal = ExtResource("8_1c0bc")
-texture_pressed = ExtResource("9_2tylp")
+scale = Vector2(0.507728, 0.490099)
+texture_normal = ExtResource("6_n31oh")
+texture_pressed = ExtResource("9_1c0bc")
 action = "jump"

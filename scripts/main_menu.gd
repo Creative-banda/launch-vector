@@ -3,6 +3,9 @@ extends CanvasLayer
 var level_to_change: PackedScene
 
 
+func _ready() -> void:
+	AudioPlayer.play_music("main_menu")
+
 
 func _on_quit_button_down() -> void:
 	get_tree().quit()

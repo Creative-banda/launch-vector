@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5qdvwf48gpvk"]
+[gd_scene load_steps=11 format=3 uid="uid://5qdvwf48gpvk"]
 
 [ext_resource type="AudioStream" uid="uid://cdye2e1rid52" path="res://assets/sound_effects/background_music.mp3" id="1_1qhh7"]
 [ext_resource type="Script" uid="uid://bdhmbm2yufe2s" path="res://scripts/audio_player.gd" id="1_syohv"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cswebg1x8expc" path="res://assets/sound_effects/hurt_3.mp3" id="4_50w30"]
 [ext_resource type="AudioStream" uid="uid://bektqs4a47tyk" path="res://assets/sound_effects/hurt_2.mp3" id="4_mrh1j"]
 [ext_resource type="AudioStream" uid="uid://bu23kioemrafu" path="res://assets/sound_effects/trampoline_sound.mp3" id="5_mfaxx"]
+[ext_resource type="AudioStream" uid="uid://bh3cmkvqp77ii" path="res://assets/sound_effects/main_menu_background_music.mp3" id="8_wiaen"]
 [ext_resource type="AudioStream" uid="uid://c65lnxenyp0vd" path="res://assets/sound_effects/game_over.mp3" id="9_mrh1j"]
 
 [node name="Audio_Player" type="Node2D"]
@@ -37,6 +38,11 @@ pitch_scale = 1.06
 
 [node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1qhh7")
+parameters/looping = true
+
+[node name="Main_Menu_Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wiaen")
+autoplay = true
 parameters/looping = true
 
 [node name="Trampoline" type="AudioStreamPlayer" parent="."]

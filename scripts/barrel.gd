@@ -19,10 +19,13 @@ func check_if_someone_inside():
 		for body in bodies:
 			if body.has_method("take_damage"):
 				body.take_damage(global_position, 1)
-
+			elif body.name.contains("box"):
+				# Apply Force so box gets pushed
+				var direction = (body.global_position - global_position).normalized()
+				body.apply_impulse(direction * 100)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body.name == "player" or body.name.contains("box"):
 		animation_player.play("blink")
 
 func on_blink_finished() -> void:
@@ -34,6 +37,7 @@ func on_blink_finished() -> void:
 	var random_animation = randi() % 3 + 1
 	barrel_1_animation.play("animation_" + str(random_animation))
 	$AudioStreamPlayer2D.play()
+	animation_player.play("collision_shape")
 
 func _on_barrel_1_animation_animation_finished() -> void:
 	queue_free()

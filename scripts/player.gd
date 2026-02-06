@@ -18,7 +18,7 @@ const SPEED = 300.0
 const ACCELERATION = 1800.0  # How fast we reach max speed
 const FRICTION = 1200.0  # How fast we stop
 const AIR_ACCELERATION = 1200.0  # Acceleration in air (less than ground)
-const AIR_FRICTION = 600.0  # Friction in air
+const AIR_FRICTION = 200.0  # Friction in air
 
 # Jump Constants
 const JUMP_VELOCITY = -400.0

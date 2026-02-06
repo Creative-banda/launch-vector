@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy2jyik35npj7"]
+[gd_scene load_steps=4 format=3 uid="uid://cy2jyik35npj7"]
 
 [ext_resource type="Texture2D" uid="uid://r8g3efaaseui" path="res://assets/tile_map/Objects/Box.png" id="1_3inec"]
 [ext_resource type="Script" uid="uid://bk4qtc88tvkw3" path="res://scripts/box.gd" id="1_ks2v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
+size = Vector2(77, 78)
 
 [node name="box" type="RigidBody2D"]
 linear_damp = 2.0
@@ -11,5 +14,6 @@ script = ExtResource("1_ks2v0")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_3inec")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-29, -38, 28, -38, 38, -28, 38, 28, 28, 38, -27, 39, -39, 28, -39, -28)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ks2v0")
